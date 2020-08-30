@@ -1,0 +1,6 @@
+[submodule "evsim"]
+	path = evsim
+	url = https://github.com/eventsim/evsim
+[submodule "adev"]
+	path = adev
+	url = https://github.com/eventsim/adev
