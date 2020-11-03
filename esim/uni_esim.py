@@ -10,7 +10,7 @@ from evsim.definition import *
 
 from config import *
 
-scm = ScenarioManager('evac.sce')
+scm = ScenarioManager(SCENARIO_NAME)
 config =scm.get_config()
 
 se = SystemSimulator()
@@ -24,9 +24,7 @@ for region in scm.get_regions():
 	rm.add_region_to_building(region['rid'], (region['regionSize'][0], region['regionSize'][1]))
 	for entry in region['entries']:
 		rm.add_entry_point_to_region(region['rid'], entry['en_id'], (entry['coord'][0],entry['coord'][1]))
-		rm.add_entry_point_to_region(region['rid'], entry['en_id'], (entry['coord'][0], entry['coord'][1]))
 	for exit in region['exits']:
-		rm.add_exit_point_to_region(region['rid'], entry['ex_id'], (entry['coord'][0],entry['coord'][1]))
 		rm.add_exit_point_to_region(region['rid'], exit['ex_id'], (exit['coord'][0], exit['coord'][1]))
 
 # Agents
