@@ -5,7 +5,7 @@ import random
 total_experiments = 30
 exp_results = []
 
-'''
+
 coord = []
 for i in range(10):
 	for j in range(10):
@@ -13,7 +13,8 @@ for i in range(10):
 random.shuffle(coord)
 
 for i in range(50):
-	print(f'rm.add_agent_to_region(0, ({coord[i][0]}, {coord[i][1]}), Agent(AgentOpt(0, {i}, "OBJ_GREED")))')
+	print(f"{{'rid':0, 'aid':{i}, 'coord':[{coord[i][0]}, {coord[i][1]}], 'type':'Normal', 'strategy':'OBJ_GREED'}}")
+	#print(f'rm.add_agent_to_region(0, ({coord[i][0]}, {coord[i][1]}), Agent(AgentOpt(0, {i}, "OBJ_GREED")))')
 
 '''
 for i in range(30):
@@ -28,3 +29,4 @@ for i in range(30):
 	exp_results.append(survived/float(total_agent))
 
 print(f"mean:{np.mean(exp_results)}, stddev:{np.std(exp_results)}")
+'''

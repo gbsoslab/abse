@@ -22,3 +22,6 @@ REPORT_TO_CONSOLE = True
 import os
 if os.path.isfile("./instance/config.py"):
 	from instance.config import *
+
+# Scenario
+SCENARIO_NAME = 'greed.sce'
