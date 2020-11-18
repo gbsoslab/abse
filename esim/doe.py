@@ -79,6 +79,9 @@ agent_type = [0, 0.25, 0.5, 0.75, 100]
 
 import os
 
+if not os.path.isdir('./scenario'):
+	os.mkdir('./scenario')
+	
 rid = 0
 for r in regions:
 	for eid, ex in enumerate(exits):
