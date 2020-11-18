@@ -3,6 +3,7 @@ import numpy as np
 import random
 import os
 import platform
+import datetime
 
 total_experiments = 30
 exp_results = []
@@ -19,7 +20,7 @@ for i in range(50):
 
 '''
 avg_time = []
-with open('exp_results.csv', "w") as f:
+with open(f'{datetime.datetime.now().strftime("%Y%m%d-%H%M%S")}_exp_results.csv', "w") as f:
 	for _dir in os.listdir('./scenario'):
 		base = os.path.join('./scenario', _dir)
 		print(base)
