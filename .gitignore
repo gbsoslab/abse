@@ -549,3 +549,5 @@ MigrationBackup/
 
 # cbchoi
 instance/
+scenario/
+*.sce

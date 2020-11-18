@@ -14,10 +14,10 @@ NETWORK_UPDATE_FREQ = 1
 IPWORKS_LICENSE = ""
 
 # REPORT Feature
-REPORT_FLAG = True
+REPORT_FLAG = False
 REPORT_FREQ = 1
-REPORT_TO_NETWORK = False
-REPORT_TO_CONSOLE = True
+REPORT_TO_NETWORK = True
+REPORT_TO_CONSOLE = False
 
 import os
 if os.path.isfile("./instance/config.py"):

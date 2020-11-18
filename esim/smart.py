@@ -41,6 +41,9 @@ rm.add_entry_point_to_region(0, 0, (4,4))
 rm.add_exit_point_to_region(0, 0, (0, 4))
 rm.add_exit_point_to_region(0, 1, (4, 0))
 
+rm.add_building_exit(0, 0)
+rm.add_building_exit(0, 1)
+
 rm.add_agent_to_region(0, (1, 1), Agent(AgentOpt(0, 0, "OBJ_SMART")))                                                                                                 
 rm.add_agent_to_region(0, (3, 7), Agent(AgentOpt(0, 1, "OBJ_SMART")))                                                                                                 
 rm.add_agent_to_region(0, (9, 7), Agent(AgentOpt(0, 2, "OBJ_SMART")))                                                                                                 
@@ -98,7 +101,7 @@ rm.add_agent_to_region(0, (3, 9), Agent(AgentOpt(0, 49, "OBJ_SMART")))
 
 #rm.connect_region(0, 0, 1, 0)
 
-building = rm.get_building(0, 50, "evacuation", "sname")
+building = rm.get_building(0, 100, "evacuation", "sname")
 
 se.get_engine("sname").insert_input_port("agent_in")
 se.get_engine("sname").insert_output_port("agent_out")
