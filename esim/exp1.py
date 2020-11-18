@@ -31,8 +31,10 @@ with open('exp_results.csv', "w") as f:
 			else:
 				proc = subprocess.Popen(['python3', 'uni_esim.py', file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE )
 			out = proc.communicate()
-
-			sim_end = out[0].decode('ascii').split('\r\n')
+			if platform.system() == 'Windows':
+				sim_end = out[0].decode('ascii').split('\r\n')
+			else:
+				sim_end = out[0].decode('ascii').split('\n')
 			avg_time.append(float(sim_end[0].split(":")[-1]))
 			exp_results.append(float(sim_end[1].split(",")[1].split(":")[-1])/float(sim_end[1].split(",")[0].split(":")[-1]))
 
