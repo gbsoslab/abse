@@ -1,8 +1,9 @@
 config:
-  destroy_time: 50
+  destroy_time: 30
   engineName: sname
   instance_time: 0
   simName: evacuation
+  rand_seed: 1
 sceType: EvacSim
 sceVersion: sce/v1
 scenario:
@@ -357,6 +358,12 @@ scenario:
     rid: 0
     strategy: OBJ_SMART
     type: Normal
+  building:
+    exits:
+    - eid: 0
+      rid: 0
+    - eid: 1
+      rid: 0
   regions:
   - entries:
     - coord:
@@ -368,6 +375,10 @@ scenario:
       - 0
       - 4
       ex_id: 0
+    - coord:
+      - 4
+      - 0
+      ex_id: 1
     regionSize:
     - 10
     - 10
