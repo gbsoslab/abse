@@ -10,8 +10,13 @@ from evsim.definition import *
 
 from config import *
 
-scm = ScenarioManager(SCENARIO_NAME)
-config =scm.get_config()
+import random
+import sys
+
+scm = ScenarioManager(sys.argv[1])
+config = scm.get_config()
+
+random.seed(int(config['rand_seed']))
 
 se = SystemSimulator()
 se.register_engine(config['engineName'], SIMULATION_MODE, TIME_DENSITY)
@@ -32,6 +37,9 @@ for agent in scm.get_agents():
 	if agent['type'] == 'Normal':
 		rm.add_agent_to_region(agent['rid'], (agent['coord'][0], agent['coord'][1]), Agent(AgentOpt(agent['rid'], agent['aid'], agent['strategy'])))
 
+# Building Exit
+for exit in scm.get_building_exits():
+	rm.add_building_exit(exit['rid'], exit['eid'])
 
 building = rm.get_building(config['instance_time'], config['destroy_time'], config['simName'], config['engineName'])
 
